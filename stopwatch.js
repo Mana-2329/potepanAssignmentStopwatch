@@ -9,19 +9,19 @@ $(document).ready(function(){
   let intervalTime;
   let timeAdd = 0;
 
-const updateTimeText = (function(){
+const updateTimeText = function (){
     let hour = Math.floor(stopTime / 1000 / 60 / 60);
-    let minitue = Math.floor((stopTime / 1000 / 60) % 60);
+    let minute = Math.floor((stopTime / 1000 / 60) % 60);
     let second = Math.floor((stopTime / 1000) % 60 );
     let millisecond = stopTime %  1000;
 
     hour = ('0' + hour).slice(-2);
-    minitue = ('0' + minitue).slice(-2);
+    minitue = ('0' + minute).slice(-2);
     second = ('0' + second).slice(-2);
     millisecond = ('0' + millisecond).slice(-3);
 
-    time.textContent = hour + ':' + minitue + ':' + second + ':' + millisecond;
-})
+    time.textContent = hour + ':' + minute + ':' + second + ':' + millisecond;
+};
 
 const countUp = (function(){
     intervalTime = setTimeout(function (){
